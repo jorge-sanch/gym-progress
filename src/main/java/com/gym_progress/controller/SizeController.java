@@ -16,5 +16,4 @@ public class SizeController {
         this.sizeService = sizeService;
     }
 
-    @GetMapping public
 }

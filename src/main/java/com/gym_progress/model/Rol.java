@@ -6,28 +6,23 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Table(name = "size")
 @Entity
+@Table(name = "rols")
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Size {
-    @Column
+public class Rol {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
     private Long id;
 
-    @Column
-    private String weight;
+    @Column(nullable = true, unique = true)
+    private String name;
 
     @Column
-    private String date;
-
-    @Column
-    private String notes;
-
-    @ManyToOne
-    @JoinColumn(name = "users", nullable = false)
-    private Users user;
+    private String description;
 
 }

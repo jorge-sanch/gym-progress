@@ -1,0 +1,27 @@
+:root{
+    --dark-blue: #1E232C;
+    --gray-blue: #7A8494;
+    --green: #C8FF00;
+    --primary-dark: #0D0F12;
+    --primary-gray: #7A8494;
+    --primary-white: #F0F2F5;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--primary-dark);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:var(--primary-white)
+}
+#container{
+    padding: 8px;
+    justify-content: center;
+    align-items:stretch;
+    margin: 8px;
+    box-sizing: border-box;
+    flex-direction: row;
+    position: fixed;
+}

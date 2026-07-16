@@ -1,0 +1,223 @@
+:root{
+    --dark-blue: #1E232C;
+    --letra-gray-blue: #7A8494;
+    --green: #C8FF00;
+    --primary-dark: #0D0F12;
+    --primary-gray: #7A8494;
+    --primary-white: #F0F2F5;
+}
+
+/* ======================================== */
+/* RESET Y ESTILOS GENERALES */
+/* ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: var(--primary-dark);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+}
+
+/* ======================================== */
+/* CONTENEDOR PRINCIPAL */
+/* ======================================== */
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+/* ======================================== */
+/* CAJA DE LOGIN */
+/* ======================================== */
+.login-box {
+    background: var(--primary-dark);
+    border-radius: 12px;
+    padding: 40px 35px;
+    transition: transform 0.3s ease;
+}
+
+.login-box:hover {
+    transform: translateY(-5px);
+}
+
+/* ======================================== */
+/* TÍTULOS */
+/* ======================================== */
+.logo-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-white);
+    text-align: left;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: var(--primary-gray);
+    text-align: left;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* ======================================== */
+/* FORMULARIO */
+/* ======================================== */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ======================================== */
+/* GRUPOS DE FORMULARIO */
+/* ======================================== */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--letra-gray-blue);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    
+}
+
+.form-group input {
+    padding: 12px 14px;
+    border: 1.5px solid var(--letra-gray-blue);
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    outline: none;
+    background-color: var(--dark-blue);
+}
+
+.form-group input:focus {
+    border-color: #667eea;
+    background-color: white;
+}
+
+.form-group input::placeholder {
+    color: #aaa;
+    font-size: 13px;
+}
+
+/* ======================================== */
+/* BOTÓN DE INICIO DE SESIÓN */
+/* ======================================== */
+.btn-login {
+    background: var(--green);
+    color: var(--primary-dark);
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--primary-white);
+}
+
+.btn-login:active {
+    transform: translateY(0);
+}
+
+/* ======================================== */
+/* ENLACE DE REGISTRO */
+/* ======================================== */
+.register-link {
+    text-align: center;
+    font-size: 14px;
+    color: var(--primary-white);
+    margin-top: 5px;
+}
+
+.register-link a {
+    color: var(--green);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.register-link a:hover {
+    color: var(--primary-gray);
+    text-decoration: underline;
+}
+
+/* ======================================== */
+/* RESPONSIVE - PARA MÓVILES */
+/* ======================================== */
+@media (max-width: 480px) {
+    .login-box {
+        padding: 30px 20px;
+    }
+
+    .logo-title {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    .form-group input {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .btn-login {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .register-link {
+        font-size: 13px;
+    }
+}
+
+/* ======================================== */
+/* OPCIONAL: EFECTO DE GLOW EN INPUTS */
+/* ======================================== */
+.form-group input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+/* ======================================== */
+/* OPCIONAL: ANIMACIÓN DE ENTRADA */
+/* ======================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-box {
+    animation: fadeInUp 0.6s ease-out;
+}
