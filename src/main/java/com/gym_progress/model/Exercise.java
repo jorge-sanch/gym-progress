@@ -5,33 +5,30 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.boot.query.BootQueryLogging;
 
-@Table(name = "size")
 @Entity
-@Setter
-@Getter
+@Table(name = "exercise")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Size {
+@Getter
+@Setter
+public class Exercise {
+
     @Column
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
-    private String weight;
+    private String bodyPart;
 
     @Column
-    private String date;
+    private String exerciseName;
 
     @Column
-    private String notes;
+    private Float weight;
 
     @Column
-    private String goal;
-
-    @ManyToOne
-    @JoinColumn(name = "users", nullable = false)
-    private Users user;
-
+    private Integer repetitions;
 }

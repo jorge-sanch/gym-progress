@@ -6,32 +6,30 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Table(name = "size")
+@Table(name = "nutrition")
 @Entity
-@Setter
 @Getter
-@AllArgsConstructor
+@Setter
 @NoArgsConstructor
-public class Size {
-    @Column
+@AllArgsConstructor
+public class Diet {
     @Id
+    @Column(nullable = false, unique = true)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
-    private String weight;
+    private String time;
 
     @Column
-    private String date;
+    private String food;
+
+    @Column
+    private Double water;
+
+    @Column
+    private String day;
 
     @Column
     private String notes;
-
-    @Column
-    private String goal;
-
-    @ManyToOne
-    @JoinColumn(name = "users", nullable = false)
-    private Users user;
-
 }
