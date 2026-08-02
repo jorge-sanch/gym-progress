@@ -32,6 +32,6 @@ public class Size {
 
     @ManyToOne
     @JoinColumn(name = "users", nullable = false)
-    private Users user;
+    private User user;
 
 }

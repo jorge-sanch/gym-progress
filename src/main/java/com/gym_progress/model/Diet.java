@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Table(name = "nutrition")
+@Table(name = "diet")
 @Entity
 @Getter
 @Setter
@@ -19,7 +19,7 @@ public class Diet {
     private Long id;
 
     @Column
-    private String time;
+    private String foodTime;
 
     @Column
     private String food;
@@ -32,4 +32,8 @@ public class Diet {
 
     @Column
     private String notes;
+
+   @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }

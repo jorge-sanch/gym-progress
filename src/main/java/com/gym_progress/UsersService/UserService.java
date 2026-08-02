@@ -1,9 +1,8 @@
 package com.gym_progress.UsersService;
 
-import com.gym_progress.model.Users;
-import com.gym_progress.repository.UsersRepository;
+import com.gym_progress.model.User;
+import com.gym_progress.repository.UserRepository;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,17 +11,17 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 public class UserService {
-    private UsersRepository usersRepository;
+    private UserRepository usersRepository;
 
-    public List<Users> getAllUsers(){
+    public List<User> getAllUsers(){
         return usersRepository.findAll();
     }
 
-    public Optional<Users> getUserById(Long id){
+    public Optional<User> getUserById(Long id){
         return usersRepository.findById(id);
     }
 
-    public Users saveUser(Users user){
+    public User saveUser(User user){
         return usersRepository.save(user);
     }
 
@@ -30,11 +29,11 @@ public class UserService {
         usersRepository.deleteById(id);
     }
 
-    public Users updateUser(Long id, Users userUpdate){
-        Optional<Users> user = usersRepository.findById(id);
+    public User updateUser(Long id, User userUpdate){
+        Optional<User> user = usersRepository.findById(id);
         if(user.isEmpty()) throw new IllegalArgumentException("El usuario con el Id: " + id + " no existe");
 
-        Users userOriginal = user.get();
+        User userOriginal = user.get();
 
         if(userUpdate.getName() != null){
             userOriginal.setName(userUpdate.getName());

@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.boot.query.BootQueryLogging;
 
 @Entity
 @Table(name = "exercise")
@@ -31,4 +30,8 @@ public class Exercise {
 
     @Column
     private Integer repetitions;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }

@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "rols")
 @Setter
@@ -24,5 +26,9 @@ public class Rol {
 
     @Column
     private String description;
+
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    private List<User> users;
 
 }

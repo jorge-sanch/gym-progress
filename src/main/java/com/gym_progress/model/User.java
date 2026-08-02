@@ -12,7 +12,7 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Users {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
@@ -27,8 +27,5 @@ public class Users {
     @Column
     private String password;
 
-    @ManyToOne
-    @JoinColumn(name = "rol", nullable = false)
-    private Rol rol;
 
 }
