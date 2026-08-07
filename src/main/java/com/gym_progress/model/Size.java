@@ -31,7 +31,7 @@ public class Size {
     private String goal;
 
     @ManyToOne
-    @JoinColumn(name = "users", nullable = false)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
 }

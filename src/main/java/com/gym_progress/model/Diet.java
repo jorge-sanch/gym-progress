@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.DayOfWeek;
+import java.time.LocalDateTime;
+
 @Table(name = "diet")
 @Entity
 @Getter
@@ -19,7 +22,7 @@ public class Diet {
     private Long id;
 
     @Column
-    private String foodTime;
+    private LocalDateTime foodTime;
 
     @Column
     private String food;
@@ -28,7 +31,7 @@ public class Diet {
     private Double water;
 
     @Column
-    private String day;
+    private DayOfWeek day;
 
     @Column
     private String notes;
