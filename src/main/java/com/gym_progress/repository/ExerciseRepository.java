@@ -1,7 +1,6 @@
 package com.gym_progress.repository;
 
-import com.gym_progress.model.Diet;
-import com.gym_progress.model.Size;
+import com.gym_progress.model.Exercise;
 import com.gym_progress.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -9,13 +8,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface SizeRepository extends JpaRepository<Size, Long> {
+public interface ExerciseRepository extends JpaRepository<Exercise, Long> {
 
-
-    List<Size>findByUser(User user);
-    List<Size>findUserById(Long id);
-
-
-
-
+    List<Exercise> findByUser(User user);
+    List<Exercise> findUserById(Long user);
 }

@@ -6,37 +6,37 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Table(name = "size")
+import java.time.DayOfWeek;
+import java.time.LocalDateTime;
+
+@Table(name = "diet")
 @Entity
-@Setter
 @Getter
-@AllArgsConstructor
+@Setter
 @NoArgsConstructor
-public class Size {
-    @Column
+@AllArgsConstructor
+public class Diet {
     @Id
+    @Column(nullable = false, unique = true)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
-    private String weight;
+    private LocalDateTime foodTime;
 
     @Column
-    private String date;
+    private String food;
+
+    @Column
+    private Double water;
+
+    @Column
+    private DayOfWeek day;
 
     @Column
     private String notes;
 
-    @Column
-    private String weightGoal;
-
-    @Column
-    private String mainObjetive;
-
-
-
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+   @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
-
 }

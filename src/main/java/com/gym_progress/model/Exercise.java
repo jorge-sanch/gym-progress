@@ -7,28 +7,31 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "users")
-@Setter
-@Getter
+@Table(name = "exercise")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Users {
+@Getter
+@Setter
+public class Exercise {
+
+    @Column
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
-    private Long Id;
-
-    @Column(nullable = true)
-    private String name;
+    private Long id;
 
     @Column
-    private String birthday;
+    private String bodyPart;
 
     @Column
-    private String password;
+    private String exerciseName;
+
+    @Column
+    private Float weight;
+
+    @Column
+    private Integer repetitions;
 
     @ManyToOne
-    @JoinColumn(name = "rol", nullable = false)
-    private Rol rol;
-
+    @JoinColumn(name = "user_id")
+    private User user;
 }

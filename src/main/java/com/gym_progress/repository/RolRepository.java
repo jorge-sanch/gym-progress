@@ -2,6 +2,8 @@ package com.gym_progress.repository;
 
 import com.gym_progress.model.Rol;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface rolRepository extends JpaRepository<Rol, Long> {
+@Repository
+public interface RolRepository extends JpaRepository<Rol, Long> {
 }
