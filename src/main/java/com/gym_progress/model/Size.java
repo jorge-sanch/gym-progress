@@ -28,7 +28,12 @@ public class Size {
     private String notes;
 
     @Column
-    private String goal;
+    private String weightGoal;
+
+    @Column
+    private String mainObjetive;
+
+
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)

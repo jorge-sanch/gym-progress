@@ -49,10 +49,12 @@ public class SizeService {
         if (!existingSize.getUser().getId().equals(userId)){
             throw new IllegalArgumentException("You are not allowed to change this");
         }
-        existingSize.setGoal(sizeNewDetails.getGoal());
+        existingSize.setWeightGoal(sizeNewDetails.getWeightGoal());
         existingSize.setDate(sizeNewDetails.getDate());
         existingSize.setWeight(sizeNewDetails.getWeight());
         existingSize.setNotes(sizeNewDetails.getNotes());
+        existingSize.setMainObjetive(sizeNewDetails.getMainObjetive());
+        existingSize.setWeightGoal(sizeNewDetails.getWeightGoal());
         return sizeRepository.save(existingSize);
     }
 
